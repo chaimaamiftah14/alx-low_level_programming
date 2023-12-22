@@ -1,4 +1,10 @@
 #include "main.h"
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
 /**
  * read_textfile - reads a text file and prints it to the standard output
  * @filename: name of the file to be read
@@ -10,6 +16,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int file_d;
 	int i, y;
 	char *buffer;
+
 	if (!filename)
 		return (0);
 	file_d = open(filename, O_RDONLY);
